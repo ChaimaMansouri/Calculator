@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="css.css">
+  <link rel="stylesheet" href="calculator_icon.ico">
+  <title>Calculator</title>
+</head>
+<body>
+    <div class="global">
+      <h1>Calculator</h1>
+      <div class="calculator">
+        <div class="input" id="display"></div>
+        <div class="item1 ic" onclick="clearEntry()"><span class="material-symbols-outlined">backspace</span></div>
+        <div class="item1" onclick="clearDisplay()">C</div>
+        <div class="item1" onclick="appendCharacter('÷')">÷</div>
+        <div class="item1" onclick="appendCharacter('7')">7</div>
+        <div class="item1" onclick="appendCharacter('8')">8</div>
+        <div class="item1" onclick="appendCharacter('9')">9</div>
+        <div class="item1" onclick="appendCharacter('×')">×</div>
+        <div class="item1" onclick="appendCharacter('4')">4</div>
+        <div class="item1" onclick="appendCharacter('5')">5</div>
+        <div class="item1" onclick="appendCharacter('6')">6</div>
+        <div class="item1" onclick="appendCharacter('-')">-</div>
+        <div class="item1" onclick="appendCharacter('1')">1</div>
+        <div class="item1" onclick="appendCharacter('2')">2</div>
+        <div class="item1" onclick="appendCharacter('3')">3</div>
+        <div class="item1" onclick="appendCharacter('+')">+</div>
+        <div class="item1" onclick="appendCharacter('0')">0</div>
+        <div class="item1" onclick="appendCharacter('.')">.</div>
+        <div class="item1 EG" onclick="calculateResult()">=</div>
+      </div>
+    </div>
+
+    <script>
+      let display = document.getElementById('display');
+
+      function appendCharacter(character) {
+        display.innerText += character;
+      }
+
+      function clearDisplay() {
+        display.innerText = '';
+      }
+
+      function clearEntry() {
+        display.innerText = display.innerText.slice(0, -1);
+      }
+
+      function calculateResult() {
+        try {
+          let expression = display.innerText.replace(/×/g, '*').replace(/÷/g, '/');
+          display.innerText = eval(expression);
+        } catch (e) {
+          display.innerText = 'Error';
+        }
+      }
+    </script>
+</body>
+</html>

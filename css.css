@@ -1,0 +1,53 @@
+body {
+    background-color: black;
+    background-image: url(Home.png);
+    display: flex;
+    justify-content: center; /* يوزع العناصر أفقياً */
+    align-items: center; /* يوزع العناصر عمودياً */
+    height: 100vh; /* يجعل ارتفاع الجسم كاملاً بارتفاع نافذة العرض */
+    margin: 0; /* إزالة الهوامش الافتراضية */
+}
+
+.global {
+    display: grid;
+    justify-items: center; /* يوسّط العناصر داخل الشبكة أفقياً */
+    align-items: center; /* يوسّط العناصر داخل الشبكة عمودياً */
+    text-align: center; /* يوسّط النص داخل العناصر */
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 0; /* إزالة الهامش العلوي */
+    color: aliceblue;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px; /* تعديل الفجوات بين العناصر */
+}
+
+.item1 {
+    background-color: azure;
+    padding: 20px; /* إضافة حشوة داخل العناصر لتكبيرها */
+    border-radius: 8px; /* حواف دائرية للعناصر */
+
+}
+
+.input{
+    background-color: azure;
+    grid-column-start:1 ;
+    grid-column-end:5 ;
+    border-radius: 8px;
+    padding: 20PX;
+}
+.ic{
+    grid-column-start:1 ;
+    grid-column-end:    3 ; 
+    height: 18PX;
+}
+.EG{
+    grid-column-start:3 ;
+    grid-column-end:5;
+}
